@@ -1,4 +1,4 @@
-main.pdf: main.tex main.bib
+main.pdf: *.tex *.bib Makefile
 	-pdflatex main
 	-bibtex main
 	-pdflatex main
