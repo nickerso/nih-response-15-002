@@ -4,5 +4,8 @@ auto
 *.log
 *.bbl
 *.blg
+*.out
+*.toc
+*.mp
 .git/COMMIT_EDITMSG
 
