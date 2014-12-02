@@ -14,7 +14,7 @@ We are the coordinators of COMBINE (Computational Modeling in Biology Network), 
 
 \textbf{\textsl{The history and goals of COMBINE}}
 
-COMBINE was formed in 2009 by the groups involved in developing file formats and other standards in systems biology, including SBML~\cite{hucka_2003, hucka_2004, hucka_2010}, SBGN~\cite{lenovere_2009}, BioPAX~\cite{demir_2010}, CellML~\cite{cuellar_2003, hedley_2001b}, SED-ML~\cite{waltemath_2011, springerlink:10.1007/978354088562715}, SBOL~\cite{galdzicki_2014}, NeuroML~\cite{gleeson_2010, neuroml_2014}, and others.  The impetus was the realization that many individuals were involved in multiple standardization efforts, traveling to separate international workshops year after year and performing many of the same organizational tasks multiple times for each standards community.  Eventually, two ``super meetings'' were held involving many of the groups, and slowly we realized that not only could there be cost savings in co-locating meetings: the various efforts could also benefit from common infrastructure, operating procedures, and potentially a common voice to seek support.  The Le~Nov\`{e}re group (then at the EBML European Bioinformatics Institute near Cambridge, UK) undertook the creation and maintenance of a home website for COMBINE at
+COMBINE was formed in 2009 by the groups involved in developing file formats and other standards in systems biology, including SBML~\cite{hucka_2003, hucka_2010}, SBGN~\cite{le2009systems}, BioPAX~\cite{demir2010}, CellML~\cite{cuellar2003overview, hedley_2001b}, SED-ML~\cite{sedml2011}, SBOL~\cite{galdzicki2014}, NeuroML~\cite{gleeson_2010}, and others.  The impetus was the realization that many individuals were involved in multiple standardization efforts, traveling to separate international workshops year after year and performing many of the same organizational tasks multiple times for each standards community.  Eventually, two ``super meetings'' were held involving many of the groups, and slowly we realized that not only could there be cost savings in co-locating meetings: the various efforts could also benefit from common infrastructure, operating procedures, and potentially a common voice to seek support.  The Le~Nov\`{e}re group (then at the EBML European Bioinformatics Institute near Cambridge, UK) undertook the creation and maintenance of a home website for COMBINE at
 \begin{center}\vspace*{-0.75em}
   \url{http://co.mbine.org}
 \end{center}\vspace*{-0.75em}
@@ -22,3 +22,82 @@ COMBINE was formed in 2009 by the groups involved in developing file formats and
 The primary goal of COMBINE is to coordinate the development and other activities of the various community standards used in the area of computational modeling.  By doing so, we hope that the federated projects will develop standards that are more interoperable and less overlapping than if the efforts proceeded separately.  COMBINE offers a format specification infrastructure, announcement lists, and more, as discussed below.
 
 An important point about COMBINE is that it \emph{does not dictate what individual standardization efforts should do}.  Actions are entirely up to the leaders and members of the communities involved in the individual efforts.   COMBINE does offer examples of what has worked in terms of community organization approaches, as well as some common infrastructure for such things as cataloguing standards specifications, but the degree of participation is up to the groups behind the efforts.
+
+
+\textbf{\textsl{Groups involved in COMBINE today}}
+
+COMBINE today includes the efforts listed in the following table.  All are open community efforts, with freely available specifications, open community participation, etc.  They cover a range of topics: raw data standards, model format standards, graphical notation standards, ontologies, and minimum information guidelines.
+
+\newcommand{\URL}[1]{\textls[-25]{\url{http://co.mbine.org/standards/#1}}}
+\newcolumntype{P}[1]{>{\raggedright\hspace{0pt}\arraybackslash}p{#1}}
+
+\begin{center}\vspace*{-1em}\small
+  \begin{tabular}{P{0.95in}P{2.825in}l}
+    \toprule
+    \textbf{Category} & \textbf{Name} & \textbf{COMBINE page or other reference}\\
+    \midrule
+    COMBINE representation standards
+    & BioPAX (\emph{Biological Pathways Exchange})	& \URL{biopax}\\
+    \\[-31pt]
+    & CellML						& \URL{cellml}\\
+    \\[-8pt]
+    & SBGN (\emph{Systems Biology Graphical Notation})	& \URL{sbgn}\\
+    \\[-8pt]
+    & SBML (\emph{Systems Biology Markup Language})	& \URL{sbml}\\
+    \\[-8pt]
+    & SBOL (\emph{Synthetic Biology Open Language})	& \URL{sbol}\\
+    \\[-8pt]
+    & SED-ML (\emph{Simulation Experiment Description Markup Language}) &  \URL{sed-ml}\\
+    \\[-10pt]
+    \midrule
+    \\[-10pt]
+    Associated standardization efforts
+    & BioModels.net Qualifiers				& \URL{qualifiers}\\
+    \\[-31pt]
+    & COMBINE Archive					& \URL{omex}\\
+    \\[-8pt]
+    & MIASE (\emph{Minimum Information About a Simulation Experiment}) & \URL{miase}\\
+    \\[-8pt]
+    & MIRIAM (\emph{Minimal Information Required In the Annotation of Models}) & \URL{miriam}\\
+    \\[-8pt]
+    & KiSAO (\emph{Kinetic Simulation Algorithm Ontology}) & \URL{kisao}\\
+    \\[-10pt]
+    \midrule
+    \\[-10pt]
+    Related standardization efforts
+    & BioSharing					& \cite{sansone2012toward}\\
+    \\[-31pt]
+    & CNO (\emph{Computational Neuroscience Ontology}) 	& \cite{lefranc_2012}\\
+    \\[-8pt]    
+    & FieldML (\emph{Field Markup Language})		& \cite{christie_2009}\\
+    \\[-8pt]
+    & GPML (\emph{GenMAPP Pathway Markup Language})	& \cite{gpml_2014}\\
+    \\[-8pt]    
+    & MAMO (\emph{Mathematical Modeling Ontology})	& \cite{mamo_2014}\\
+    \\[-8pt]    
+    & NeuroML 						& \cite{gleeson_2010}\\
+    \\[-8pt]    
+    & NuML (\emph{Numerical Markup Language})		& \cite{dada_2010}\\
+    \\[-8pt]    
+    & PSI-MI (\emph{Proteomics Standards Initiative})	& \cite{hermjakob_2004}\\
+    \\[-8pt]    
+    & SpineML (\emph{Spiking Neural Markup Language})	& \cite{richmond2014model}\\
+    \\[-8pt]    
+    & TEDDY (\emph{TErminology for the Description of DYnamics}) & \cite{courtot2011a}\\
+    \bottomrule
+  \end{tabular}
+\end{center}\vspace{-0.85em}
+
+The differences in the categories are as follows:
+
+\begin{itemize}\vspace*{-1em}
+
+\item The \emph{COMBINE representation standards} meet a number of basic criteria which include the following: (i) represent information in biology, (ii) possess democratically-elected editorial boards, (iii) possess full specifications of version 1.0 or higher, (iv) have API library implementations supporting the standard, and (v) have continued development supported by a unified group of identifiable people.
+
+\item The \emph{Associated standardization efforts} are either in a more fledgling state of development, or are not standard formats per se but rather tools or services that facilitate the use or interoperability of the COMBINE representation standards.
+
+\item The \emph{Related standardization efforts} are other efforts that are either candidate COMBINE standards in early stages of development, or else are mature efforts in their own right that have their own substantial communities and, while not part of COMBINE, are efforts that the COMBINE community is involved in.
+
+\end{itemize}\vspace*{-1em}
+
+A standardization community that wants to become part of COMBINE begins as a \emph{Related standardization effort}.  The developers of the standard should join the COMBINE announcement mailing lists and, especially, participate in the annual COMBINE meetings discussed below.  If the effort meets the basic criteria to be considered a full-fledged standard, the \emph{COMBINE Coordinators} will accept the effort as a COMBINE standard.
