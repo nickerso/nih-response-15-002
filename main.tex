@@ -1,4 +1,106 @@
-\documentclass{article}
+\documentclass[11pt,letterpaper]{article}
+\usepackage[letterpaper,centering,top=0.75in,total={7in,9.5in}]{geometry}
+\usepackage[pdftex]{graphicx}
+\usepackage[pdftex,rgb,dvipsnames,svgnames,hyperref,table]{xcolor}
+\usepackage[pdftex,breaklinks=true,colorlinks=true,
+  bookmarks=false,pdfhighlight=/O,
+  urlcolor=darkblue,citecolor=darkred,linkcolor=darkblue]{hyperref}
+\usepackage{fourier}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xspace}
+\usepackage{soul}
+\usepackage{url}
+\usepackage[square,numbers,sort&compress]{natbib}
+\usepackage{scrextend}
+
+
+% Color definitions.
+
+\definecolor{darkblue}{rgb}{0.1,0.3,0.6}
+\definecolor{darkred}{rgb}{0.6,0,0.1}
+\definecolor{babrahamblue}{rgb}{0.22,0.22,0.41}
+
+% Table definitions.
+
+\newcolumntype{P}[1]{>{\raggedright\hspace{0pt}\arraybackslash}p{#1}}
+
+% The following uses txtt for the typewriter font, instead of the default.
+
+\renewcommand{\ttdefault}{txtt}
+\makeatletter
+\DeclareMathAlphabet{\mathtt}{T1}{txtt}{m}{n}
+\SetMathAlphabet{\mathtt}{bold}{T1}{txtt}{b}{n}
+\def\Txtt@scale{0.98}
+\edef\Txtt@@scale{s*[\csname Txtt@scale\endcsname]}%
+\DeclareFontFamily{T1}{txtt}{\hyphenchar \font\m@ne}
+\DeclareFontShape{T1}{txtt}{m}{n}{	% regular
+     <-> \Txtt@@scale txtt%
+}{}
+\DeclareFontShape{T1}{txtt}{b}{n}{	% bold
+     <-> \Txtt@@scale txbtt%
+}{}
+\makeatother
+
+% Adjust line spacing.
+
+\renewcommand{\baselinestretch}{0.96}
+
+% Miscellaneous macros.
+
+\newcommand{\eg}{e.g.,\xspace}
+\newcommand{\idorg}{\href{http://identifiers.org}{\texttt{Identifiers.org}}\xspace}
+
+% --------------------------------------------------------------------------
+
 \begin{document}
-Test 11.
+
+\thispagestyle{empty}
+
+\vspace*{-4.5em}
+\begin{center}
+  \textsc{\Large\textls[30]{California Institute of Technology}}\\
+  {\tiny\textls[80]{DEPARTMENT OF COMPUTING AND MATHEMATICAL SCIENCES}}
+\end{center}
+
+\vspace*{2em}%
+
+\hspace{4in}%
+\hspace*{-\parindent}%
+\begin{flushright}
+\begin{minipage}{4in}
+\emph{On behalf of the COMBINE Coordinators}\\[2pt]
+Michael Hucka, Ph.D.\\
+Beckman Institute 139-74\\
+California Institute of Technology\\
+Pasadena, CA 91125\\
+\\
+December 5, 2014
+\end{minipage}
+\end{flushright}
+
+\vspace*{2ex}
+
+\begin{flushleft}
+National Institutes of Health\\
+9000 Rockville Pike\\
+Bethesda, Maryland 20892
+\end{flushleft}
+
+\setlength{\parskip}{0.7em}
+
+\begin{flushleft}
+\textbf{Notice Number: XXXXXXXXXX}
+
+Dear NIH,
+
+Forthcoming.
+
+\end{flushleft}
+\clearpage
+
+\bibliographystyle{plainnat}
+\bibliography{courses,courses-SBML-Le_Novere,progress-report,references}
+
 \end{document}
