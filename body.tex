@@ -10,20 +10,18 @@
 
 Dear NIH,
 
-We are the coordinators of COMBINE (Computational Modeling in Biology Network), an initiative to coordinate the development of many popular standards and formats for computational modeling in biology.  We are grateful for the opportunity that NIH is providing to respond to the \emph{Request for Information (RFI) Making Data Usable -- A Framework for Community-Based Data and Metadata Standards Efforts for NIH-relevant Research}.  We would like to take this opportunity to describe the experiences of the standardization efforts under the COMBINE umbrella.
+We are the coordinators of COMBINE (Computational Modeling in Biology Network; \url{http://co.mbine.org}), an initiative to coordinate the development of many popular standards and formats for computational modeling in biology.  We are grateful for the opportunity that NIH is providing to respond to the \emph{Request for Information (RFI) Making Data Usable -- A Framework for Community-Based Data and Metadata Standards Efforts for NIH-relevant Research}.  We would like to take this opportunity to summarize COMBINE's efforts and relate some of our experiences in the development of community-based standards in biology.
+
 
 \textbf{\textsl{The history and goals of COMBINE}}
 
-COMBINE was formed in 2009 by the groups involved in developing file formats and other standards in systems biology, including SBML~\cite{hucka_2003, hucka_2010}, SBGN~\cite{le2009systems}, BioPAX~\cite{demir2010}, CellML~\cite{cuellar2003overview, hedley_2001b}, SED-ML~\cite{sedml2011}, SBOL~\cite{galdzicki2014}, NeuroML~\cite{gleeson_2010}, and others.  The impetus was the realization that many individuals were involved in multiple standardization efforts, traveling to separate international workshops year after year and performing many of the same organizational tasks multiple times for each standards community.  Eventually, two ``super meetings'' were held involving many of the groups, and slowly we realized that not only could there be cost savings in co-locating meetings: the various efforts could also benefit from common infrastructure, operating procedures, and potentially a common voice to seek support.  The Le~Nov\`{e}re group (then at the EBML European Bioinformatics Institute near Cambridge, UK) undertook the creation and maintenance of a home website for COMBINE at
-\begin{center}\vspace*{-0.75em}
-  \url{http://co.mbine.org}
-\end{center}\vspace*{-0.75em}
+The availability of appropriate data formats and process descriptions is an essential enabler for reproducible science.  Researchers must be able to build on each other's work to develop a deeper understanding of biological phenomena, but this task is greatly impeded if they do not use common languages to describe their work. In the past two decades, this has led to the development of several formats and minimum information guidelines to facilitate the exchange of data and models. However, the existence of uncoordinated standards risks creating silos that induce new interoperability problems.
 
-The primary goal of COMBINE is to coordinate the development and other activities of the various community standards used in the area of computational modeling.  By doing so, we hope that the federated projects will develop standards that are more interoperable and less overlapping than if the efforts proceeded separately.  COMBINE offers a format specification infrastructure, announcement lists, and more, as discussed below.
+COMBINE was formed in 2009 by the groups involved in developing file formats and other standards in systems biology, including SBML~\cite{hucka_2003, hucka_2010}, SBGN~\cite{le2009systems}, BioPAX~\cite{demir2010}, CellML~\cite{cuellar2003overview, hedley_2001b}, SED-ML~\cite{sedml2011}, SBOL~\cite{galdzicki2014}, NeuroML~\cite{gleeson_2010}, and others.  The initial impetus was the realization that many individuals were involved in multiple efforts, traveling to separate international workshops year after year and performing many of the same organizational tasks multiple times for each standards community.  Eventually, two ``super meetings'' were held involving many of the groups, and slowly we realized that not only could there be cost savings in co-locating meetings: the various efforts could also benefit from common infrastructure, operating procedures, and potentially a common voice to seek support.
 
-An important point about COMBINE is that it \emph{does not dictate what individual standardization efforts should do}.  Actions are entirely up to the leaders and members of the communities involved in the individual efforts.   COMBINE does offer examples of what has worked in terms of community organization approaches, as well as some common infrastructure for such things as cataloguing standards specifications, but the degree of participation is up to the groups behind the efforts.
+COMBINE's aim is thus to act as a coordinator, facilitator, and resource for different standardization efforts whose domains of use cover related areas of the computational biology space.  We hope that COMBINE can help the federated projects develop standards that are more interoperable and with less overlap than if the efforts proceeded separately.  An important point about COMBINE, however, is that it \emph{does not dictate what individual standardization efforts should do}.  Actions are entirely up to the leaders and members of the communities involved in the individual efforts.  COMBINE does offer examples of what has worked in terms of community organization approaches, as well as some common infrastructure for such things as cataloguing standards specifications, but the degree of participation is up to the groups behind the efforts.
 
-
+\clearpage
 \textbf{\textsl{Groups involved in COMBINE today}}
 
 COMBINE today includes the efforts listed in the following table.  All are open community efforts, with freely available specifications, open community participation, etc.  They cover a range of topics: raw data standards, model format standards, graphical notation standards, ontologies, and minimum information guidelines.
@@ -101,3 +99,35 @@ The differences in the categories are as follows:
 \end{itemize}\vspace*{-1em}
 
 A standardization community that wants to become part of COMBINE begins as a \emph{Related standardization effort}.  The developers of the standard should join the COMBINE announcement mailing lists and, especially, participate in the annual COMBINE meetings discussed below.  If the effort meets the basic criteria to be considered a full-fledged standard, the \emph{COMBINE Coordinators} will accept the effort as a COMBINE standard.
+
+
+\textbf{\textsl{Activities Performed by COMBINE}}
+
+COMBINE, as an organization, currently performs the following activities:
+\vspace*{-1em}
+\begin{itemize}
+
+\item \emph{Organize meetings}: COMBINE organizes open meetings where interested people can gather for face-to-face discussions and work on the standards.  The primary meetings are the annual COMBINE Forum and the annual HARMONY (HAckathon on Resources for MOdeliNg in biologY) workshop, held approximately six months apart.  The joint meetings help the different standardization efforts work together; they also make financial sense by reducing the overall number of meetings, travel, and money spent on hosting meetings.  (However, COMBINE does not currently have any funding of its own, and the meetings must be organized by groups that volunteer to host them.)  The leaders of the various standards also endeavor to write meeting reports that summarize the outcomes of the meetings~\citep[e.g.,][]{le2011meeting, waltemath2014meeting}.
+
+\item \emph{Help coordinate standards development}: Thanks in large part to the meetings that COMBINE organizes, the discussion forums it provides, and the involvement of many of the same people in multiple standardization efforts, COMBINE helps coordinate the activities of the different efforts.  This reduces duplication of effort, user confusion, and non-interoperability among the efforts.
+
+\item \emph{Identify missing standards and initiate efforts to develop them}: COMBINE's meta-community is in an ideal position to identify what is missing from the current constellation of standards in computational systems biology.  This has already yielded benefits: we have recently developed the COMBINE archive, a format that fills the need for a simple, consistent way of bundling multiple files related to a modeling project~\cite[\url{http://co.mbine.org/standards/omex};][]{Bergmann2014combine}; and we have also begun to identify missing minimal requirements for common annotations across the spectrum of data used in biological modeling, such as parameter identifiability (tentatively called the Minimal Information for Model Inference and Parametrisation---MIMIP) and mathematical classification (the Mathematical Modelling Ontology---MAMO).
+
+\item \emph{Provide a specification infrastructure}: COMBINE provides a consistent framework for cataloguing the definitions of COMBINE standards. This framework includes a consistent, hierarchical identifier scheme for identifying standard specifications; a URI scheme for locating specifications and standards~\cite[using Identifiers.org to provide permanent, resolvable URIs for standards;][]{Juty2012}; and a web page structure for the description of each standard.
+
+\item \emph{Develop common procedures}: Many standardization efforts are started by academics who have little experience with community organization.  Effective organization is something that takes time and experience to learn.  In COMBINE, we are documenting our experiences and collecting them into a collection of examples, recommendations and best practices (e.g., \url{http://co.mbine.org/Documents/criteria}).  We hope to provide would-be standards developers with a set of off-the-shelf ``standard operating procedures'' for different situations and goals.
+
+\item \emph{Organize tutorials}: Educating biologists about available standards and compatible software tools is another important activity pursued by COMBINE.  We organize tutorials at the primary COMBINE meetings as well as at international conferences, in particular the annual \emph{International Conference on Systems Biology} (ICSB).
+
+\item \emph{Maintain collective online forums/groups}:  COMBINE maintains mailing lists and online discussion forums (\url{http://co.mbine.org/comm}).  A discussion list cover the topic of general interest for all COMBINE members, while dedicated lists cover specific issues such as the COMBINE archive, metadata, etc.  General announces are done via social media (e.g., Twitter feed \emph{@combine\_coord}).
+
+\end{itemize}
+
+
+An additional activity that we hope to undertake soon is fund-raising.  This will require COMBINE to become a legal entity that can accept funding.  Once this is in place, we hope to be able to fund the meetings and online infrastructure, and perhaps also seek funding for further standards development.
+
+
+\clearpage
+\textbf{\textsl{Experiences and perspectives in community-based standards development}}
+
+NEEDS WORK.
