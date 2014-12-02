@@ -62,7 +62,12 @@ function startCheck(path, frequency, callback) {
 }
 
 function enableCheck(yesno) {
+    if (checkEnabled == yesno)
+        return;
     checkEnabled = yesno;
+    if (checkEnabled) {
+        previousCrc = '';
+    }
 }
 
 
