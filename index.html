@@ -1,4 +1,5 @@
 <html>
+<!-- Vireo: VIewer for REfreshed Output -->
 <head>
     <title>Document</title>
 
@@ -10,54 +11,77 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
 
-<style type="text/css">
-<!--
-html {
-   height: 100%;
-}
+    <link rel="stylesheet" type="text/css" href="css/vireo.css"/>
 
-body {
-   margin: 0;
-   padding: 0;
-   height: 100%;
-   overflow: hidden;
-}
-
-object {
-   display: block;
-}
--->
-</style>
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/crc-check.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/crc-check.js"></script>
 
 </head>
 
 <body id="body">
 
-<div style="display: block; height: 30px; margin: 10px 20px 0 10px; float: right">
-<form action="#"><input type="submit" value="reload"/></form>
+<div id="info-bar">
+  <form action="#"><input type="submit" value="reload"/></form>
 </div>
 
-<iframe id="contentiframe" src="main.pdf" style="width: 100%; height: 98%; margin: 0"></iframe>
+<iframe id="contentiframe" src="content.pdf" style="width: 100%; height: 98%; margin: 0"></iframe>
 
 <script type="text/javascript">
+/* http://stackoverflow.com/a/11797741/743730 */
+function getIframeWindow(iframe_object) {
+  var doc;
+
+  if (iframe_object.contentWindow) {
+    return iframe_object.contentWindow;
+  }
+
+  if (iframe_object.window) {
+    return iframe_object.window;
+  } 
+
+  if (!doc && iframe_object.contentDocument) {
+    doc = iframe_object.contentDocument;
+  } 
+
+  if (!doc && iframe_object.document) {
+    doc = iframe_object.document;
+  }
+
+  if (doc && doc.defaultView) {
+   return doc.defaultView;
+  }
+
+  if (doc && doc.parentWindow) {
+    return doc.parentWindow;
+  }
+
+  return undefined;
+}
 
 /* Set the initial state of the reload button */
 $('input:submit').attr('disabled', true);
 
 /* Start watching the file for changes */
-$(startCheck('main.pdf', 15, function() {
+$(startCheck('content.pdf', 15, function() {
    $('#body').css('background-color', 'darkred');
    $('input:submit').attr('disabled', false);
 }));
 
 /* Reload the content when the button is clicked. */
 $('input:submit').click(function() {
-   /* http://stackoverflow.com/questions/9790462/how-to-refresh-reload-embed-of-application-pdf */
-   /* http://stackoverflow.com/a/8844087/743730 */
-   document.getElementById('contentiframe').contentWindow.document.location.reload();
+   var el = document.getElementById('contentiframe');
+   var iframe = getIframeWindow(el);
+   try {
+      /* http://stackoverflow.com/questions/9790462/how-to-refresh-reload-embed-of-application-pdf */
+      /* Turns out this fails in Firefox, but works in Safari and Chrome. */
+      iframe.location.reload(); 
+   } catch (e) {
+      /* This will succeed in Firefox, and do what we want, but while
+         it also succeeds in other browsers, there it won't cause the
+         content of the frame to be reloaded. */
+      /* This one-liner from http://stackoverflow.com/a/4249906/743730 */
+      $('#contentiframe').attr("src", $('#contentiframe').attr("src"));
+   }
    $('#body').css('background-color', 'white');
    $('input:submit').attr('disabled', true);
    $(enableCheck(true));
