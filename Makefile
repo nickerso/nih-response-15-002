@@ -1,5 +1,3 @@
-.PHONY: main.pdf
-
 main.pdf:
 	-pdflatex main
 	-bibtex main
