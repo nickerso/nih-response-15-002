@@ -1,0 +1,26 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+object {
+    display: block;
+}
+
+#info-bar {
+    display: block;
+    height: 30px;
+    margin: 10px 20px 0 10px;
+    float: right
+}
+
+input[type="submit"] {
+    font-size: 12px;
+    vertical-align: middle;
+}
