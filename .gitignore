@@ -8,4 +8,4 @@ auto
 *.toc
 *.mp
 .git/COMMIT_EDITMSG
-
+.#*
