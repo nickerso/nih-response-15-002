@@ -62,7 +62,7 @@ function getIframeWindow(iframe_object) {
 $('input:submit').attr('disabled', true);
 
 /* Start watching the file for changes */
-$(startCheck('main.pdf', 15, function() {
+$(startCheck('main.pdf', 8, function() {
    $('#body').css('background-color', 'darkred');
    $('input:submit').attr('disabled', false);
 }));
