@@ -23,7 +23,7 @@ You will need to git clone the repository, push your changes back to the reposit
 
 * [Windows GitHub client](https://windows.github.com)
 * [Mac GitHub  client](https://mac.github.com)
-* Linux users may want to look at the 3rd-party git clients [listed here](http://git-scm.com/download/gui/linux).
+* Linux users may want to look at the 3rd-party git clients [listed here](http://git-scm.com/download/gui/linux)
 
 To learn how to use git, here are two good resources: 
 
