@@ -1,24 +1,18 @@
 /*
-  ORIGINALLY:
+  Vireo checker function.
 
-  crc-reload is a script to auto reload the current page when you save the html.
-  Requires jquery.
-  Usage: 
-  Simply include this js file in your html page.
-  It will ajax GET poll the current page every second and if the html is different, reload itself.
-  Version 0.1 - Initial release
-  Thanks to Andrea Ercolino for providing the javascript crc32 functionality
-  http://noteslog.com/post/crc32-for-javascript/
+  The original version of this was based on crc-reload by "kiwidev":
+  http://kiwidev.wordpress.com/2011/07/14/auto-reload-page-if-html-changed/
+  https://bitbucket.org/diffused/html-crc-reload
 
-  MODIFIED BY: mhucka@caltech.edu in June 2014.
-  - Changed to use a different, hopefully faster crc32 function.
-  - Reformatted the code.
-  - Commented out some code that looks questionable.
-  - Changed the polling interval.
+  I rewrote nearly everything and renamed and repurposed it for Vireo, but
+  the original idea and approach of using ajax + CRC was due to kiwidev's
+  work.  I would not have been able to figure out some things without
+  starting from that work.  
 
-  2014-11-29 <mhucka@caltech.edu>
-  - Use strings to represent the crc because the numbers are too big
-  - Rewrote to implement as a more general function with callbacks.
+  I could not find any license or distribution statement in the original.
+  This (new) work is released under the LGPL v.2 license.
+
 */
 
 
@@ -27,38 +21,63 @@ var checkEnabled = true;
 
 /* The numbers are too big to be represented in javascript int, so
  * the gross hack employed here is to turn them to strings and do
- * string comparisons.
+ * string comparisons instead of numerical comparisons.
  */
-var previousCrc = '';
+var prevCheckValue = '';
 
-function check(path, callback) {
+function check(path, md5file, callback) {
     if (checkEnabled) {
-        $.ajax({
-            type: 'GET',
-            cache: false,
-            url: path,
-            success: function(data) {
-                var newcrc = crc32(data).toString();
-                if (previousCrc == '') {
-                    previousCrc = newcrc;
-                    return;
-                }
-                if (newcrc != previousCrc) {
-                    previousCrc = newcrc;
-                    if (callback) {
-                        callback();
-                        checkEnabled = false; // Stop until reenabled.
+        if (md5file) {
+            $.ajax({
+                type: 'GET',
+                cache: false,
+                url: md5file,
+                success: function(data) {
+                    if (prevCheckValue == '') {
+                        prevCheckValue = data;
+                        return;
+                    }
+                    if (data != prevCheckValue) {
+                        prevCheckValue = data;
+                        if (callback) {
+                            callback();
+                            checkEnabled = false; // Stop until reenabled.
+                        }
                     }
                 }
+            });
+        } else {
+            /* Fallback approach: get the whole file and compute a CRC 
+               ourselves. This is bandwidth-heavy and thus undesirable, so
+               it's better if the user provides an md5 file. */
+            $.ajax({
+                type: 'GET',
+                cache: false,
+                url: path,
+                success: function(data) {
+                    var newcrc = crc32(data).toString();
+                    if (prevCheckValue == '') {
+                        prevCheckValue = newcrc;
+                        return;
+                    }
+                    if (newcrc != prevCheckValue) {
+                        prevCheckValue = newcrc;
+                        if (callback) {
+                            callback();
+                            checkEnabled = false; // Stop until reenabled.
+                        }
+                    }
+                }
+            });
         }
-        });
     }
 }
 
 function startCheck(path, frequency, callback) {
     checkEnabled = true;
-    check(path, null);
-    setInterval(function() { check(path, callback); }, 1000 * frequency);
+    md5file = md5filename(path);
+    check(path, md5file, null);         // Store the 1st check value.
+    setInterval(function() { check(path, md5file, callback); }, 1000 * frequency);
 }
 
 function enableCheck(yesno) {
@@ -66,10 +85,16 @@ function enableCheck(yesno) {
         return;
     checkEnabled = yesno;
     if (checkEnabled) {
-        previousCrc = '';
+        prevCheckValue = '';
     }
 }
 
+function md5filename(path) {
+    /* Normally we expect a file name like foo.pdf, but this approach
+       will work even if there is no dot in the name. */
+    var base = path.substr(0, path.lastIndexOf('.')) || path;
+    return base + '.md5';
+}
 
 /* Improved crc32 function from http://stackoverflow.com/a/18639999 */
 
