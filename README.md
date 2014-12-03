@@ -1,4 +1,4 @@
-The main content file is `body.tex`.
+The main content file is `body.tex`.  The formatted output viewer page is [here](http://sbmlteam.github.io/nih-response-15-002/).
 
 ## If you want to edit directly from here, in your browser
 
