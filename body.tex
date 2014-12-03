@@ -1,8 +1,10 @@
 % -*- TeX-master: "main"; fill-column: 72 -*-
 % ----------------------------------------------------------------------
 
-% Miscellaneous macros used later.
+% Miscellaneous macros used below.
 
+\newcommand{\divider}[1]{\vspace{0.25em}\textbf{\large #1}~\xrfill[0pt]{0.5pt}[gray]}
+\newcommand{\subdivider}[1]{\vspace{0.25em}\textbf{\textsl{#1}}}
 \newcommand{\eg}{e.g.,\xspace}
 \newcommand{\idorg}{\href{http://identifiers.org}{\texttt{Identifiers.org}}\xspace}
 
@@ -13,16 +15,18 @@ Dear NIH,
 We are the coordinators of COMBINE (Computational Modeling in Biology Network; \url{http://co.mbine.org}), an initiative to better organize the development of many popular standards and formats for computational modeling in biology.  We are grateful for the opportunity provided by NIH to respond to the \emph{Request for Information (RFI) Making Data Usable -- A Framework for Community-Based Data and Metadata Standards Efforts for NIH-relevant Research}.  We would like to summarize COMBINE's efforts, and address some of the questions posed in the RFI from the perspective of our experiences developing community-based standards in biology.
 
 
-\textbf{\textsl{The history and goals of COMBINE}}
+\divider{The history and goals of COMBINE}
 
-The availability of appropriate data formats and process descriptions is an essential enabler for reproducible science.  Researchers must be able to build on each other's work to develop a deeper understanding of biological phenomena, but this task is greatly impeded if they do not use common languages to describe their work.  In the past two decades, this has led to the development of several formats and minimum information guidelines to facilitate the exchange of data and models.  However, the existence of uncoordinated standards risks creating silos that induce new interoperability problems.  
+The availability of appropriate data formats and process descriptions is an essential enabler for reproducible science.  Researchers must build on each other's work to develop a deeper understanding of biological phenomena, but that is impeded if they do not use common languages to describe their work.  This has led to the creation of many formats and minimum information guidelines to facilitate the exchange of data and models.  However, the existence of uncoordinated standards risks creating silos that induce new interoperability problems.
 
-At one extreme, one can hold the position that it does not matter how many standards are proposed; natural selection will eventually lead the best to be adopted.  At the other extreme, one can impose standardization choices in a top-down fashion.  Most likely, the best long-term approach lies somewhere between these extremes.  The ineffectiveness of attempting to impose standards from the top down, at least in science, has been discussed in the literature~\cite{quackenbush_2006b}.  Our experience has been that the most useful standards are those developed bottom-up by stakeholders with a vested interest in making the standards actually work.  (Perhaps it is a good thing that standardization work in science does not usually lead to fame and fortune: it may mean people do it because they \emph{want} to do it.)  What is often missing is better coordination and communication between standardization efforts.
+At one extreme, one can hold the position that it does not matter how many standards are proposed; natural selection will eventually lead the best to be adopted.  At the other extreme, one can impose standards choices in a top-down fashion.  The best long-term approach surely lies between these extremes.  The ineffectiveness of attempting to impose data standards in a top-down fashion in biology has been recognized~\cite{quackenbush_2006b}.  Our experiences likewise support the view that the most useful standards are those developed bottom-up by stakeholders who have a vested interest in making the standards truly work.  What is often missing, however, is better coordination and communication between groups, and better resources to streamline the standards development process.
 
-COMBINE was formed in 2009 by the groups involved in developing file formats and other standards in systems biology, including SBML~\cite{hucka_2003, hucka_2010}, SBGN~\cite{le2009systems}, BioPAX~\cite{demir2010}, CellML~\cite{cuellar2003overview, hedley_2001b}, SED-ML~\cite{sedml2011}, SBOL~\cite{galdzicki2014}, NeuroML~\cite{gleeson_2010}, and others.  COMBINE aims to act as a coordinator, facilitator, and resource for different standardization efforts whose domains of use cover related areas of the computational biology space.  Our hope is that it can help the federated projects develop standards that are more interoperable and with less overlap than if the efforts proceeded separately.  COMBINE does not dictate what individual standardization efforts should do, however; actions are entirely up to the leaders and members of the communities involved in the individual efforts.  COMBINE \emph{does} offer examples of what has worked in terms of community organization approaches, as well as some common infrastructure for such things as cataloguing standards specifications, and common meetings fostering greater interaction between the relevant communities.
+% Sometimes simply learning of the \emph{existence} of a standardization effort can help prevent needless redundancy in an area.
+
+COMBINE was formed in 2009 by the groups involved in developing file formats and other standards in systems biology, including SBML~\cite{hucka_2003, hucka_2010}, SBGN~\cite{le2009systems}, BioPAX~\cite{demir2010}, CellML~\cite{cuellar2003overview, hedley_2001b}, SED-ML~\cite{sedml2011}, SBOL~\cite{galdzicki2014}, NeuroML~\cite{gleeson_2010}, and others.  COMBINE aims to act as a coordinator, facilitator, and resource for different standardization efforts whose domains of use cover related areas of the computational biology space.  Our hope is that it can help the federated projects develop standards that are more interoperable and with less overlap than if the efforts proceeded separately.  We believe exchange and discussion between interested groups is an essential ingredient that not only helps decrease the creation of unnecessary standards due to lack of knowledge about what is available, but also improves the quality of---and interoperability between---related standards.  COMBINE does not dictate what individual standardization efforts should do, however; actions are entirely up to the leaders and members of the communities involved in the individual efforts.  COMBINE \emph{does} offer examples of what has worked in terms of community organization approaches, as well as some common infrastructure for such things as cataloguing standards specifications, and common meetings fostering greater interaction between the relevant communities.
 
 
-\textbf{\textsl{Groups involved in COMBINE today}}
+\divider{Groups involved in COMBINE today}
 
 COMBINE today includes the efforts listed in the following table.  All are open community efforts, with freely available specifications, open community participation, etc.  They cover a range of topics: raw data standards, model format standards, graphical notation standards, ontologies, and minimum information guidelines.
 
@@ -101,7 +105,7 @@ The differences in the categories are as follows:
 A standardization community that wants to become part of COMBINE begins as a \emph{Related standardization effort}.  The developers of the standard should join the COMBINE announcement mailing lists and, especially, participate in the annual COMBINE meetings discussed below.  If the effort meets the basic criteria to be considered a full-fledged standard, the \emph{COMBINE Coordinators} will accept the effort as a COMBINE standard.
 
 
-\textbf{\textsl{The operation of COMBINE}}
+\divider{The operation of COMBINE}
 
 COMBINE, as an organization, currently performs the following activities:
 \vspace*{-1em}
@@ -123,13 +127,38 @@ COMBINE, as an organization, currently performs the following activities:
 
 \end{itemize}
 
-
 An additional activity that we hope to undertake soon is fund-raising.  This will require COMBINE to become a legal entity that can accept funding.  Once this is in place, we hope to be able to fund the meetings and online infrastructure, and perhaps also seek funding for further standards development.
 
 
 \clearpage
-\textbf{\textsl{Experiences and perspectives in community-based standards development}}
+\divider{Lessons learned in community-based standards development}
 
-FORTHCOMING.
+Taking a proposed standard from inception to adoption is not straightforward.  It is often difficult for academic researchers to organize successful community-oriented standards; the necessary skill development is not part of any science training curriculum, and there is a dearth of practical resources for standards development.  Moreover, the work of standards development does not end at adoption: successful standards must continue to evolve with changes in technologies and user needs.  (This has implications for funding, which we discuss further below.)
 
+In what follows, we relate some of the lessons learned from our experiences developing community-based standards for biology.  Not all of these will generalize to other circumstances, but we hope that many will.
+
+
+\subdivider{Ingredients for successful development of community-based standards}
+
+% Production of an information or data communication standard is sometimes undertaken as a strategic move, particularly when commercial interests are involved.  Often, however, the desire for a standard arises when individuals and groups who want to collaborate discover they need a shared language, protocol, framework or other common structures to make it possible.
+
+Different activities are needed at different stages in a standard's life, together with different strategies to implement them and sometimes different personnel.  We have found the following to be some of the vital ingredients to be shared by many of the most successful efforts:
+
+\vspace*{-1em}
+\begin{itemize}
+
+\item \emph{Focus on significant, common problems}.  Useful standards are those that address a significant need face by many people, not just one laboratory or organization.  Sometimes a standard is a side-effect of other work.  For example, SBML was originally a by-product of an effort to develop a software interoperability framework: the framework needed a data exchange format.  It was not until later that it became clear that SBML addressed a real need for many people, and that it should be the focus of a standardization effort in its own right.  Similar stories underlie behind many of the COMBINE standards.
+
+\item \emph{Start development with a subset of possible stakeholders}.  The early stages of a standard's development are more efficient if undertaken by a small number of stakeholders.  The developers need to possess strong technical skills, creativity in solving problems, and enough experience to avoid falling into common traps (\eg overengineered solutions, reliance on sexy but untested technologies, etc.).  Design by a small group of domain experts stands a better chance of succeeding in laying a coherent foundation.  This admittedly runs against the goal of eventually having a democratic, open process, but it is a temporary bootstrapping phase.
+
+\item \emph{Open up the process once the standard gains traction}.  Once adoption increases, it is no longer in the best interests of the user community to have the standard be controlled by a group of self-appointed authorities.  This is the time to introduce a democratic process, with an editorial board elected from the community, a system for proposing changes to the standard, and other community-oriented processes.  This helps spread the intellectual work load in continuing to evolve the standard, and it lets the community take ownership, which encourages increased involvement and adoption.
+
+\item \emph{Use a staged development approach}.  Attempting to support the kitchen sink in a standard right from the start is a recipe for failure, but so is producing an incomplete standard.  An alternative is to borrow a tactic from product development and create the equivalent of a ``minimal viable product'' at each stage.  A simple standard that is fully usable for a subset of possible use-cases will allow people to start using it in practice, which in turn produces feedback for the next stage and simultaneous begins creating a user base.
+
+\item \emph{Make sure there is a shepherd}. Volunteer contributions are essential for a community-oriented process, but a successful long-running project often needs more.  Many standardization projects are successful due in part to having someone who devotes a majority of their time to the effort as a whole: mediating disputes in the community, leading a development team, seeking funding, etc.  The involvement of the same persons over many years also provides crucial continuity to the effort as a whole.  Unfortunately, that time is spent on activities that do not produce high-profile journal publications---the primary metric for academic success.  These tasks are thus not usually suitable for postdocs or faculty.
+
+\end{itemize}
+\vspace*{-1em}
+
+It may be surprising that most of the ingredients above are actual about human-level concerns than technological concerns.  This reflects the fact that standards development is at least as much about reaching agreement between people as it is about the technical details of the standard.
 
