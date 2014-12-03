@@ -19,12 +19,11 @@ Do 3 things: (1) click the "nowrap" button and select "Soft wrap" from the pop-u
 
 ## If you want to edit in a desktop editor
 
-You will need to git clone the repository, push your changes back to the repository, regularly check for updates to the repository and git pull updates when needed.  If this is unfamiliar, you may want to download one of the GitHub desktop clients, which provide nice GUI interfaces for these tasks and monitor the repository for remote changes.
+You will need to git clone the repository, push your changes back to the repository, regularly check for updates to the repository and git pull updates when needed.  If this is unfamiliar, you may want to download one of the following desktop git clients, which provide nice GUI interfaces for these tasks and monitor the repository for remote changes.
 
 * [Windows GitHub client](https://windows.github.com)
 * [Mac GitHub  client](https://mac.github.com)
-
-Linux users may want to look at the clients [listed here](http://git-scm.com/download/gui/linux).
+* Linux users may want to look at the 3rd-party git clients [listed here](http://git-scm.com/download/gui/linux).
 
 To learn how to use git, here are two good resources: 
 
