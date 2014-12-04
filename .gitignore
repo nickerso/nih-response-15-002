@@ -9,3 +9,6 @@ auto
 *.mp
 .git/COMMIT_EDITMSG
 .#*
+*.synctex.gz
+.project
+
